@@ -6,6 +6,7 @@ from __future__ import print_function
 import torch
 from tqdm import tqdm
 from modules.beam import Beam
+import datetime
 
 def get_inst_idx_to_tensor_position_map(inst_idx_list):
     ''' Indicate the position of an instance in a tensor. '''
@@ -199,6 +200,12 @@ def eval_caption_epoch(args, model, test_dataloader, tokenizer, device, n_gpu, l
         all_caption_lists = [list(itms) for itms in zip(*all_caption_lists)]
     else:
         all_caption_lists = [all_caption_lists]
+
+    # save results
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"output_{current_time}.txt"
+    with open(filename, "w") as f:
+        f.write(repr(all_result_lists))
 
     # Evaluate
     metrics_nlg = nlgEvalObj.compute_metrics(ref_list=all_caption_lists, hyp_list=all_result_lists)
