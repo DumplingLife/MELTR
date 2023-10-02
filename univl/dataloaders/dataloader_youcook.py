@@ -437,6 +437,7 @@ class Youcook_Caption_Test(Dataset):
         self.max_frames = max_frames
         self.tokenizer = tokenizer
 
+        print(self.feature_dict)
         self.feature_size = self.feature_dict[self.csv["feature_file"].values[0]].shape[-1]
 
         # Get iterator video ids
