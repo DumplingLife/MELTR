@@ -19,7 +19,13 @@ def make_data(feature_chunks, num_chunks):
     }
 
 data = {
-    "S03_split2": make_data(10, 10)
+    "output_segment_000": make_data(10, 5),
+    "output_segment_001": make_data(10, 5),
+    "output_segment_002": make_data(10, 5),
+    "output_segment_003": make_data(10, 5),
+    "output_segment_004": make_data(10, 5),
+    "output_segment_005": make_data(10, 5),
+    "output_segment_006": make_data(10, 5),
 }
 
 with open('data/actionsense/actionsense_data.pickle', 'wb') as file:
