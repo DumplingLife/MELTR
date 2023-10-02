@@ -14,8 +14,8 @@ def make_data(feature_chunks, num_chunks):
     return {
         'start': np.array([feature_chunks*i for i in range(num_chunks)]),
         'end': np.array([feature_chunks*i for i in range(1,num_chunks+1)]),
-        'text': np.array([PLACEHOLDER_WORD for _ in range(6)], dtype=object),
-        'transcript': np.array(['none' for _ in range(6)], dtype=object)
+        'text': np.array([PLACEHOLDER_WORD for _ in range(num_chunks)], dtype=object),
+        'transcript': np.array(['none' for _ in range(num_chunks)], dtype=object)
     }
 
 data = {
