@@ -1,8 +1,8 @@
 import pickle
 
-with open("data/actionsense/actionsense_data.pickle", 'rb') as file:
-    actionsense_data = pickle.load(file)
+with open("data/youcookii/youcookii_data.no_transcript.pickle", 'rb') as file:
+    x = pickle.load(file)
 
-print(actionsense_data)
+print(x)
 
 # zuDJIPoSl7o
