@@ -20,8 +20,8 @@ def make_data(feature_chunks, num_chunks):
     }
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--feature_chunks', type=int)
-parser.add_argument('--num_chunks', type=int)
+parser.add_argument('--feature_chunks', required=True, type=int)
+parser.add_argument('--num_chunks', required=True, type=int)
 args = parser.parse_args()
 
 data = {}
