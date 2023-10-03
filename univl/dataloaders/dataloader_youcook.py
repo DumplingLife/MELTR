@@ -42,7 +42,6 @@ class Youcook_Train(Dataset):
         self.p = p
         # Get iterator video ids
         video_id_list = [itm for itm in self.csv['video_id'].values]
-        print(video_id_list)
         self.video_id2idx_dict = {video_id: id for id, video_id in enumerate(video_id_list)}
         # Get all captions
         self.iter2video_pairs_dict = {}
