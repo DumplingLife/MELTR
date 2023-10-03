@@ -32,7 +32,12 @@ for video_name in [
     "output_segment_003",
     "output_segment_004",
     "output_segment_005",
-    "output_segment_006",]:
+    "output_segment_006",
+    "output_segment_007",
+    "output_segment_008",
+    "output_segment_009",
+    "output_segment_010",
+    "output_segment_011",]:
         data[video_name] = make_data(args.feature_chunks, args.num_chunks)
 
 with open('data/actionsense/actionsense_data.pickle', 'wb') as file:
