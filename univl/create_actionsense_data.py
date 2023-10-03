@@ -1,5 +1,6 @@
 import numpy as np
 import pickle
+import argparse
 
 def make_data(feature_chunks, num_chunks):
     """
@@ -18,15 +19,21 @@ def make_data(feature_chunks, num_chunks):
         'transcript': np.array(['none' for _ in range(num_chunks)], dtype=object)
     }
 
-data = {
-    "output_segment_000": make_data(10, 5),
-    "output_segment_001": make_data(10, 5),
-    "output_segment_002": make_data(10, 5),
-    "output_segment_003": make_data(10, 5),
-    "output_segment_004": make_data(10, 5),
-    "output_segment_005": make_data(10, 5),
-    "output_segment_006": make_data(10, 5),
-}
+parser = argparse.ArgumentParser()
+parser.add_argument('--feature_chunks', type=int)
+parser.add_argument('--num_chunks', type=int)
+args = parser.parse_args()
+
+data = {}
+for video_name in [
+    "output_segment_000",
+    "output_segment_001",
+    "output_segment_002",
+    "output_segment_003",
+    "output_segment_004",
+    "output_segment_005",
+    "output_segment_006",]:
+        data[video_name] = make_data(args.feature_chunks, args.num_chunks)
 
 with open('data/actionsense/actionsense_data.pickle', 'wb') as file:
     pickle.dump(data, file)
